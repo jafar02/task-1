@@ -18,30 +18,45 @@ const competitors = [
 const CompetitorTable = () => {
   return (
     <div style={{ overflowX: "auto" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "900px" }}>
         <thead>
-          <tr style={{ backgroundColor: "#4F46E5", color: "white" }}>
-            <th style={{ padding: "10px", border: "1px solid #ddd" }}>Company</th>
-            <th style={{ padding: "10px", border: "1px solid #ddd" }}>Focus Area</th>
-            <th style={{ padding: "10px", border: "1px solid #ddd" }}>Approach / Features</th>
-            <th style={{ padding: "10px", border: "1px solid #ddd" }}>Strength</th>
-            <th style={{ padding: "10px", border: "1px solid #ddd" }}>Weakness</th>
+          <tr>
+            <th style={headerStyle}>Company</th>
+            <th style={headerStyle}>Focus Area</th>
+            <th style={headerStyle}>Approach / Features</th>
+            <th style={headerStyle}>Strength</th>
+            <th style={headerStyle}>Weakness</th>
           </tr>
         </thead>
         <tbody>
           {competitors.map((c, index) => (
             <tr key={index} style={{ backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#ffffff" }}>
-              <td style={{ padding: "10px", border: "1px solid #ddd" }}>{c.company}</td>
-              <td style={{ padding: "10px", border: "1px solid #ddd" }}>{c.focus}</td>
-              <td style={{ padding: "10px", border: "1px solid #ddd" }}>{c.features}</td>
-              <td style={{ padding: "10px", border: "1px solid #ddd" }}>{c.strength}</td>
-              <td style={{ padding: "10px", border: "1px solid #ddd" }}>{c.weakness}</td>
+              <td style={cellStyle}>{c.company}</td>
+              <td style={cellStyle}>{c.focus}</td>
+              <td style={cellStyle}>{c.features}</td>
+              <td style={cellStyle}>{c.strength}</td>
+              <td style={cellStyle}>{c.weakness}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
+};
+
+/* Styles */
+const headerStyle = {
+  padding: "12px",
+  border: "1px solid #ddd",
+  backgroundColor: "#1F2937", // dark gray
+  color: "white",
+  textAlign: "left",
+};
+
+const cellStyle = {
+  padding: "10px",
+  border: "1px solid #ddd",
+  textAlign: "left",
 };
 
 export default CompetitorTable;
