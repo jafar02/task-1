@@ -1,8 +1,27 @@
+import React, { useState } from "react";
 import Section from "./components/Section";
 import ComparisonTable from "./components/ComparisonTable";
 import Architecture from "./components/Architecture";
 
 function App() {
+  const [showLanding, setShowLanding] = useState(true); // Landing screen state
+
+  const handleStart = () => {
+    setShowLanding(false); // Hide landing, show main dashboard
+  };
+
+  if (showLanding) {
+    return (
+      <div style={landingStyle}>
+        <h1>Welcome to Twin Health Analysis</h1>
+        <p>AI-driven metabolic care – competitor & technical insights</p>
+        <button style={buttonStyle} onClick={handleStart}>
+          Start Presentation
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div style={styles.app}>
       {/* HEADER */}
@@ -138,6 +157,30 @@ const styles = {
     margin: "0 auto",
     padding: "20px",
   },
+};
+
+/* 🎨 LANDING SCREEN STYLES */
+const landingStyle = {
+  height: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "#282c34",
+  color: "white",
+  textAlign: "center",
+  padding: "20px",
+};
+
+const buttonStyle = {
+  padding: "15px 30px",
+  fontSize: "20px",
+  border: "none",
+  borderRadius: "8px",
+  cursor: "pointer",
+  backgroundColor: "#61dafb",
+  color: "#000",
+  marginTop: "20px",
 };
 
 export default App;
