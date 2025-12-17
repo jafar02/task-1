@@ -2,7 +2,6 @@ import Section from "./components/Section";
 import ComparisonTable from "./components/ComparisonTable";
 import Architecture from "./components/Architecture";
 
-
 function App() {
   return (
     <div style={styles.app}>
@@ -30,7 +29,7 @@ function App() {
         </div>
       </div>
 
-      {/* CONTENT */}
+      {/* MAIN CONTENT */}
       <main style={styles.container}>
         <Section title="Problem Statement">
           <p>
@@ -54,8 +53,6 @@ function App() {
             <li>Clinically validated outcomes</li>
           </ul>
         </Section>
-
-       
 
         <Section title="Competitor Comparison">
           <ComparisonTable />
