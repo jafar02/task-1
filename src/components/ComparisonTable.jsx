@@ -18,45 +18,31 @@ const competitors = [
 const CompetitorTable = () => {
   return (
     <div style={{ overflowX: "auto" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "900px" }}>
+      <table className="comparison-table" style={{ minWidth: "900px" }}>
         <thead>
           <tr>
-            <th style={headerStyle}>Company</th>
-            <th style={headerStyle}>Focus Area</th>
-            <th style={headerStyle}>Approach / Features</th>
-            <th style={headerStyle}>Strength</th>
-            <th style={headerStyle}>Weakness</th>
+            <th className="dark-header">Company</th>
+            <th className="dark-header">Focus Area</th>
+            <th className="dark-header">Approach / Features</th>
+            <th className="dark-header">Strength</th>
+            <th className="dark-header">Weakness</th>
           </tr>
         </thead>
+
         <tbody>
           {competitors.map((c, index) => (
-            <tr key={index} style={{ backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#ffffff" }}>
-              <td style={cellStyle}>{c.company}</td>
-              <td style={cellStyle}>{c.focus}</td>
-              <td style={cellStyle}>{c.features}</td>
-              <td style={cellStyle}>{c.strength}</td>
-              <td style={cellStyle}>{c.weakness}</td>
+            <tr key={index}>
+              <td>{c.company}</td>
+              <td>{c.focus}</td>
+              <td>{c.features}</td>
+              <td>{c.strength}</td>
+              <td>{c.weakness}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
-};
-
-/* Styles */
-const headerStyle = {
-  padding: "12px",
-  border: "1px solid #ddd",
-  backgroundColor: "#1F2937", // dark gray
-  color: "white",
-  textAlign: "left",
-};
-
-const cellStyle = {
-  padding: "10px",
-  border: "1px solid #ddd",
-  textAlign: "left",
 };
 
 export default CompetitorTable;
