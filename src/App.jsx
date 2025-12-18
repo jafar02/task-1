@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Section from "./components/Section";
 import ComparisonTable from "./components/ComparisonTable";
 import Architecture from "./components/Architecture";
+import DigitalTwinDemo from "./components/DigitalTwinDemo";
 
 function App() {
-  const [showLanding, setShowLanding] = useState(true); // Landing screen state
+  const [showLanding, setShowLanding] = useState(true);
 
   const handleStart = () => {
-    setShowLanding(false); // Hide landing, show main dashboard
+    setShowLanding(false);
   };
 
   if (showLanding) {
@@ -73,6 +74,16 @@ function App() {
           </ul>
         </Section>
 
+        {/* ⭐ DIGITAL TWIN DEMO */}
+        <Section title="Digital Twin – Interactive Demo">
+          <p>
+            This simplified interactive model demonstrates how a digital twin
+            predicts metabolic responses based on food, activity, and sleep
+            inputs.
+          </p>
+          <DigitalTwinDemo />
+        </Section>
+
         <Section title="Competitor Comparison">
           <ComparisonTable />
         </Section>
@@ -127,7 +138,7 @@ function App() {
   );
 }
 
-/* 🎨 STYLES */
+/* STYLES */
 const styles = {
   app: {
     backgroundColor: "#F3F4F6",
@@ -159,7 +170,7 @@ const styles = {
   },
 };
 
-/* 🎨 LANDING SCREEN STYLES */
+/* LANDING SCREEN */
 const landingStyle = {
   height: "100vh",
   display: "flex",
