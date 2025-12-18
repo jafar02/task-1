@@ -1,24 +1,85 @@
 import React from "react";
 
 const competitors = [
-  { company: "Twin Health", focus: "Metabolic health & diabetes reversal", features: "Whole-body digital twin, AI-powered personalized care, CGM integration", strength: "Personalized, data-driven, clinically validated", weakness: "Niche, may require wearable/CGM devices" },
-  { company: "Virta Health", focus: "Type-2 diabetes reversal", features: "Remote care, nutritional intervention, continuous monitoring", strength: "Proven diabetes reversal, strong clinical support", weakness: "High program commitment, subscription-based" },
-  { company: "Omada Health", focus: "Chronic condition management", features: "Digital program, behavior change, remote coaching", strength: "Multi-condition, scalable", weakness: "Less personalized than Twin Health digital twin" },
-  { company: "Noom", focus: "Weight management & pre-diabetes", features: "Psychology-based coaching, tracking, app engagement", strength: "Popular app, user-friendly, behavior-focused", weakness: "Limited clinical validation for diabetes reversal" },
-  { company: "Livongo (Teladoc)", focus: "Diabetes & chronic care", features: "Remote monitoring devices, coaching, data analytics", strength: "Established brand, large patient base", weakness: "Focus on monitoring rather than reversal" },
-  { company: "Glooko", focus: "Diabetes & health data platform", features: "Device integration, analytics for clinicians", strength: "Strong device/data ecosystem", weakness: "Limited patient-facing interventions" },
-  { company: "Dexcom", focus: "CGM & metabolic monitoring", features: "Continuous glucose monitoring devices", strength: "Accurate real-time data", weakness: "Not a full care program" },
-  { company: "Abbott", focus: "Medical devices", features: "CGM and wearable devices", strength: "Device reliability", weakness: "Requires integration with programs" },
-  { company: "Unlearn", focus: "AI for clinical trials", features: "Digital twin simulation for research", strength: "Innovative AI approach", weakness: "Not patient-facing" },
-  { company: "Q Bio", focus: "Biometric digital twin", features: "Whole-body scans & AI health modeling", strength: "Comprehensive data model", weakness: "Broad health focus, less disease-specific" },
-  { company: "Included Health", focus: "AI personal health assistant", features: "Telehealth and guidance", strength: "AI-driven guidance", weakness: "Not specialized in metabolic care" },
-  { company: "Dacadoo", focus: "Health engagement & analytics", features: "Risk scores, behavior tracking", strength: "Gamified engagement", weakness: "Not clinically specialized" },
+  {
+    company: "Twin Health",
+    focus: "Metabolic health & diabetes reversal",
+    features: "Whole-body digital twin, AI-driven personalization, CGM integration",
+    strength: "Highly personalized, clinically validated outcomes",
+    weakness: "Premium pricing, requires CGM devices"
+  },
+  {
+    company: "Sugar.fit (India)",
+    focus: "Diabetes management & reversal",
+    features: "CGM-based insights, nutrition coaching, fitness & doctor support",
+    strength: "India-focused care model, lifestyle-driven",
+    weakness: "Limited deep AI modeling vs Twin Health"
+  },
+  {
+    company: "BeatO (India)",
+    focus: "Diabetes management ecosystem",
+    features: "Smart glucometers, app tracking, medicine delivery, coaching",
+    strength: "Strong hardware + service integration",
+    weakness: "Primarily management, not true reversal"
+  },
+  {
+    company: "Fitterfly (India)",
+    focus: "Digital therapeutics for diabetes",
+    features: "Personalized programs, nutrition & behavior coaching",
+    strength: "Clinically backed programs, affordable",
+    weakness: "No digital twin or advanced AI layer"
+  },
+  {
+    company: "HealthifyMe (India)",
+    focus: "Nutrition & weight management",
+    features: "Calorie tracking, AI coach, fitness plans",
+    strength: "Large user base, strong food database",
+    weakness: "Not diabetes-specific"
+  },
+  {
+    company: "Ultrahuman (India)",
+    focus: "Metabolic & glucose tracking",
+    features: "CGM-based metabolic insights, wearable integration",
+    strength: "Advanced real-time glucose analytics",
+    weakness: "More wellness-focused than clinical"
+  },
+  {
+    company: "Virta Health",
+    focus: "Type-2 diabetes reversal",
+    features: "Remote care, nutrition-based intervention, coaching",
+    strength: "Strong clinical evidence",
+    weakness: "Strict program adherence required"
+  },
+  {
+    company: "Livongo (Teladoc)",
+    focus: "Diabetes & chronic care",
+    features: "Connected devices, coaching, analytics",
+    strength: "Large enterprise adoption",
+    weakness: "Focuses on monitoring, not reversal"
+  },
+  {
+    company: "Dexcom",
+    focus: "Continuous glucose monitoring",
+    features: "Real-time CGM devices",
+    strength: "Highly accurate glucose data",
+    weakness: "Not a care or treatment platform"
+  },
+  {
+    company: "Abbott (FreeStyle Libre)",
+    focus: "Medical devices & CGM",
+    features: "Widely used CGM sensors",
+    strength: "Reliable, scalable device ecosystem",
+    weakness: "Requires third-party care programs"
+  }
 ];
 
 const CompetitorTable = () => {
   return (
     <div style={{ overflowX: "auto" }}>
-      <table className="comparison-table" style={{ minWidth: "900px" }}>
+      <table
+        className="comparison-table"
+        style={{ minWidth: "1000px", borderCollapse: "collapse" }}
+      >
         <thead>
           <tr>
             <th className="dark-header">Company</th>
